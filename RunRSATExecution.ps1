@@ -12,8 +12,8 @@ Param(
     [Parameter(Mandatory=$true, HelpMessage="One or more DevOps test suites to run. Specify suite names comma separated.")]
     [string[]]$TestSuitesToRun,
 
-    [Parameter(Mandatory=$false, HelpMessage="The installation folder of RSAT.")]
-    [string]$RSATInstallationPath = $Env:DynamicsRSATFolder,
+    <#[Parameter(Mandatory=$false, HelpMessage="The installation folder of RSAT.")]
+    [string]$RSATInstallationPath = $Env:DynamicsRSATFolder,#>
 
     [Parameter(Mandatory=$false, HelpMessage="Settings file to pass to the RSAT console application.")]
     [string]$SettingsFilePath = $(Join-Path -Path $Env:DynamicsRSATFolder -ChildPath "BuildSettings.settings"),
