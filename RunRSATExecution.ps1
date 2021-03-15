@@ -20,7 +20,7 @@ Param(
     [string]$SettingsFilePath = $(Join-Path -Path $Env:DynamicsRSATFolder -ChildPath "BuildSettings.settings"),
 
     [Parameter(Mandatory=$false, HelpMessage="Log folder location to use.")]
-    [string]$LogFolder = $(Join-Path -Path $env:TEMP -ChildPath "RSATBuildAutomationLogs")
+    [string]$LogFolder,<# = $(Join-Path -Path $env:TEMP -ChildPath "RSATBuildAutomationLogs")#>
 )
 
 [int]$ExitCode = 0
@@ -31,7 +31,7 @@ try
 {
     # First locate or create the logs folder
     Write-Message "Validating log folder existence in the following location: $LogFolder"
-
+    
    
     # Don't start without any settings
     Write-Message "Validating settings to use."
