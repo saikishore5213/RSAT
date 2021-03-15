@@ -11,6 +11,7 @@ NO TECHNICAL SUPPORT IS PROVIDED.  YOU MAY NOT DISTRIBUTE THIS CODE UNLESS YOU H
 Param(
     [Parameter(Mandatory=$true, HelpMessage="One or more DevOps test suites to run. Specify suite names comma separated.")]
     [string[]]$TestSuitesToRun,
+ 
 
     [Parameter(Mandatory=$false, HelpMessage="The installation folder of RSAT.")]
     [string]$RSATInstallationPath,<# = $Env:DynamicsRSATFolder,#>
@@ -31,12 +32,7 @@ try
     # First locate or create the logs folder
     Write-Message "Validating log folder existence in the following location: $LogFolder"
 
-    If(!(test-path $LogFolder))
-    {
-        Write-Message "Log folder was not found so creating the folder: $LogFolder"
-        New-Item -ItemType Directory -Force -Path $LogFolder
-    }
-
+   
     # Don't start without any settings
     Write-Message "Validating settings to use."
 
