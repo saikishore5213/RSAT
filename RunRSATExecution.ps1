@@ -11,7 +11,6 @@ NO TECHNICAL SUPPORT IS PROVIDED.  YOU MAY NOT DISTRIBUTE THIS CODE UNLESS YOU H
 Param(
     [Parameter(Mandatory=$true, HelpMessage="One or more DevOps test suites to run. Specify suite names comma separated.")]
     [string[]]$TestSuitesToRun,
-    [string]$RSATInstallationPath,
 
     [Parameter(Mandatory=$false, HelpMessage="The installation folder of RSAT.")]
     [string]$RSATInstallationPath = $Env:DynamicsRSATFolder,
