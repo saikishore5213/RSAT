@@ -20,7 +20,7 @@ Param(
     [string]$SettingsFilePath = $(Join-Path -Path $Env:DynamicsRSATFolder -ChildPath "BuildSettings.settings"),
 
     [Parameter(Mandatory=$false, HelpMessage="Log folder location to use.")]
-    [string]$LogFolder,<# = $(Join-Path -Path $env:TEMP -ChildPath "RSATBuildAutomationLogs")#>
+    [string]$LogFolder <# = $(Join-Path -Path $env:TEMP -ChildPath "RSATBuildAutomationLogs")#>
 )
 
 [int]$ExitCode = 0
