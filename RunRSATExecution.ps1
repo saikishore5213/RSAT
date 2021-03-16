@@ -14,10 +14,10 @@ Param(
  
 
     [Parameter(Mandatory=$false, HelpMessage="The installation folder of RSAT.")]
-    [string]$RSATInstallationPath,<# = $Env:DynamicsRSATFolder,#>
+    [string]$RSATInstallationPath = $env:DynamicsRSATFolder,
 
     [Parameter(Mandatory=$false, HelpMessage="Settings file to pass to the RSAT console application.")]
-    [string]$SettingsFilePath = $(Join-Path -Path $Env:DynamicsRSATFolder -ChildPath "BuildSettings.settings"),
+    [string]$SettingsFilePath = $(Join-Path -Path $env:DynamicsRSATFolder -ChildPath "BuildSettings.settings"),
 
     [Parameter(Mandatory=$false, HelpMessage="Log folder location to use.")]
     [string]$LogFolder <# = $(Join-Path -Path $env:TEMP -ChildPath "RSATBuildAutomationLogs")#>
