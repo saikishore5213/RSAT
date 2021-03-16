@@ -31,7 +31,11 @@ try
 {
     # First locate or create the logs folder
     Write-Message "Validating log folder existence in the following location: $LogFolder"
-    
+    If(!(test-path $LogFolder))
+    {
+        Write-Message "Log folder was not found so creating the folder: $LogFolder"
+        New-Item -ItemType Directory -Force -Path $LogFolder
+    }
    
     # Don't start without any settings
     Write-Message "Validating settings to use."
@@ -42,6 +46,9 @@ try
     }
 
     Set-Location $RSATInstallationPath
+    
+    Write-Message "$RSATInstallationPath"
+    Write-Message "$SettingsFilePath"
 
     # Perform test execution for all the suites specified. Currently whenever a
     Write-Message "Initiating RSAT test execution..."
